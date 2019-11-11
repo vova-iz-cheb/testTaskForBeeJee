@@ -1,0 +1,214 @@
+@import "bootstrap-reboot.min";
+@import "bootstrap-grid.min";
+@import "fontello";
+@import "roboto";
+
+//color
+$green: #03cc12;
+$lightgreen: #c0ffbc;
+$darkgreen: #012502;
+$red: #e83232;
+$lightred: #ff000014;
+$darkred: #530000;
+
+%clear-list {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+%button {
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 5px 10px;
+  vertical-align: middle;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  outline: none;
+  user-select: none;
+  transition: all .25s;
+  cursor: pointer;
+}
+
+%input {
+  border: 1px solid $green;
+  border-radius: 5px;
+  outline: none;
+  padding: 5px 5px 5px 10px;
+  transition: box-shadow .3s;
+  &:focus {
+    box-shadow: 0 0 2px 2px $green;
+  }
+}
+
+body {
+  font-family: 'Roboto', serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.grow1 {
+  flex-grow: 1;
+}
+
+.header {
+  background-color: cyan;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 1rem;
+}
+
+.main {
+  margin-bottom: 1rem;
+}
+
+.footer {
+  padding-top: 1rem;
+  background-color: navy;
+  color: #fff;
+}
+
+.error, .success {
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  margin: 1rem 0;
+  padding: 10px;
+}
+
+.error {
+  background-color: $lightred;
+  color: $red;
+  border-color: $red;
+}
+
+.success {
+  background-color: $lightgreen;
+  color: $green;
+  border-color: $green;
+}
+
+label, input, textarea {
+  margin-bottom: 10px;
+}
+
+.btn {
+  @extend %button;
+  margin-right: 10px;
+}
+
+.btn-green {
+  color: $green;
+  border: 1px solid $green;
+  &:hover {
+    color: $darkgreen;
+    border-color: $darkgreen;
+    background-color: $green;
+  }
+  &:active {
+    background-color: $darkgreen;
+    color: #fff;
+  }
+}
+.btn-red {
+  color: $red;
+  border: 1px solid $red;
+  &:hover {
+    color: $darkred;
+    border-color: $darkred;
+    background-color: $lightred;
+  }
+  &:active {
+    background-color: $darkred;
+    color: #fff;
+  }
+}
+
+textarea, input[type=text], input[type=email], input[type=password] {
+  @extend %input;
+}
+
+.w100 {
+  width: 100%;
+}
+
+input.input-error {
+  border-color: $red;
+  &:focus {
+    box-shadow: 0 0 2px 2px $red;
+  }
+}
+
+.pag {
+  @extend %clear-list;
+  display: flex;
+
+  &__link {
+    color: navy;
+    display: block;
+    padding: 8px;
+    margin-right: 5px;
+    border: 1px solid cyan;
+    transition: all 0.3s;
+    &:hover {
+      text-decoration: none;
+      background-color:rgb(181, 250, 250);
+      border-color: navy;
+    }
+  }
+  &__link.active {
+    color: white;
+    background-color: navy;
+    border-color: navy;
+  }
+}
+
+.tasks {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  td,th {
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+  }
+  .small {
+    min-width: 100px;
+    width: 20%;
+  }
+  
+  tr {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  tr:nth-child(even) {
+    background-color: rgb(213, 240, 243);
+  }
+  tr:nth-child(odd) {
+    background-color: rgb(248, 248, 226);
+  }
+  &__sort.active {
+    color: navy;
+    white-space: nowrap;
+  }
+}
+
+.editAdmin {
+  color: rgb(133, 133, 133);
+  font-size: 10px;
+  &__wrapper {
+    text-align: right;
+  }
+}

@@ -1,0 +1,18 @@
+.snipper {
+  position: fixed;
+  height: 35px;
+  width: 35px;
+  border: 5px solid cyan;
+  border-right-color: transparent;
+  border-radius: 50%;
+  top: calc(50% - 17px);
+  left: calc(50% - 17px);
+  animation: spinner-border .75s linear infinite;
+}
+
+@-webkit-keyframes spinner-border {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
